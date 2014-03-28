@@ -14,6 +14,7 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/style.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
@@ -22,7 +23,122 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <div id="container">
+            <header id="header">
+                <h1 class="logo">Training</h1>
+                <nav id="nav">
+                    <ul>
+                        <li class="current"><a href="#" title="Home">Home</a></li>
+                        <li><a href="#" title="Company">Company</a></li>
+                        <li><a href="#" title="Contact">Contact</a></li>
+                    </ul>
+                    <a class="menu" href="#">Menu</a>
+                </nav>
+            </header>
+            <section class="banner_section">
+                <figure>
+                    <img class="image" src="img/banner.jpg" alt="Banner">
+                </figure>
+            </section>
+            <section class="main_section">
+                <article class="article clearfix">
+                    <header>
+                        <figure class="figure">
+                            <img class="image" src="img/paragraph_01.jpg" alt="Paragraph #1">
+                        </figure>
+                        <h1>Node.JS: cos’è, da dove viene e soprattutto dove va</h1>
+                    </header>
+                    <p>Node.JS nasce nel 2009 quando Ryan Dahl sperimenta l’engine V8, normalmente utilizzato in Google Chrome, nello sviluppo di applicazioni server-side. </p>
+                </article>
+                <article class="article clearfix">
+                    <header>
+                        <figure class="figure">
+                            <img class="image" src="img/paragraph_02.jpg" alt="Paragraph #2">
+                        </figure>
+                        <h1>Con la testa nelle nuvole: Beat Schwegler parla di Cloud Azure a Codemotion Roma 2014</h1>
+                    </header>
+                    <p>“Talvolta il cambiamento è difficile da accettare, a volte le persone non vogliono andare incontro al cambiamento. Eppure è necessario. Io credo che la vera innovazione non possa esistere senza il cambiamento”.</p>
+                </article>
+                <form id="form" class="form_box">
+                    <fieldset class="fieldset">
+                        <ol>
+                            <li class="left">
+                                <label class="label" for="name">Name *</label><br>
+                                <input class="input" id="name" name="name" type="text" placeholder="First and last name" required autofocus>
+                            </li>
+                            <li class="right">
+                                <label class="label" for="email">Email *</label><br>
+                                <input class="input" id="email" name="email" type="email" placeholder="example@domain.com" required>
+                            </li>
+                        </ol>
+                    </fieldset>
+                    <fieldset class="fieldset">
+                        <ol>
+                            <li class="left">
+                                <label class="label" for="born">Date of birth *</label><br>
+                                <input class="input" id="born" name="born" type="date" min="1920-01-01" max="2014-01-01" required>
+                            </li>
+                            <li class="right">
+                                <label class="label" for="topic">Topic *</label><br>
+                                <input class="input" id="topic" name="topic" type="text" list="topic_list" required>
+                                <datalist id="topic_list">
+                                    <option>help</option>
+                                    <option>job</option>
+                                    <option>info</option>
+                                    <option>thanks</option>
+                                </datalist>
+                            </li>
+                        </ol>
+                    </fieldset>
+                    <fieldset class="fieldset">
+                        <label class="label" for="note">Note *</label><br>
+                        <textarea class="textarea" id="note" name="note" rows="5" required></textarea>
+                    </fieldset>
+                    
+                    <fieldset class="fieldset">
+                        <button class="submit" type=submit>Send</button>
+                    </fieldset>
+                </form>
+            </section>
+            <aside id="aside" class="clearfix">
+                <ul class="callout_text clearfix">
+                    <li>
+                        <h2>Text #1</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </li>
+                    <li>
+                        <h2>Text #2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </li>
+                    <li>
+                        <h2>Text #3</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </li>
+                </ul>
+                <ul class="callout_images">
+                    <li>
+                        <figure>
+                            <img class="image" src="img/aside_01.jpg" alt="Text #1">
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img class="image" src="img/aside_02.jpg" alt="Text #2">
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img class="image" src="img/aside_03.jpg" alt="Text #3">
+                        </figure>
+                    </li>
+                </ul>
+            </aside>
+            <div class="clr"></div>
+            <footer id="footer">
+                <p class="copy">&copy; Copyright Training. All Right Reserved.</p>
+                <a class="privacy" href="#" title="Privacy Policy">Privacy Policy</a>
+            </footer>
+        </div><!-- container -->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
