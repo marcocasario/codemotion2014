@@ -1,10 +1,13 @@
 var http = require("http"),
     url = require("url"),
     path = require("path"),
-    fs = require("fs")
+    fs = require("fs"),
+    ws = require("nodejs-websocket"),
     port = process.argv[2] || 8888,
     file404 = '404.html';
  
+
+/* webserver */
 http.createServer(function(request, response) {
  
   var uri = url.parse(request.url).pathname
@@ -36,4 +39,27 @@ http.createServer(function(request, response) {
   });
 }).listen(parseInt(port, 10));
  
+
+/* websocket server */
+var server = ws.createServer(function (connection) {
+  connection.nickname = null
+  connection.on("text", function (str) {
+    if (connection.nickname === null) {
+      connection.nickname = str
+      broadcast(str+" entered")
+    } else
+      broadcast("["+connection.nickname+"] "+str)
+  })
+  connection.on("close", function () {
+    broadcast(connection.nickname+" left")
+  })
+})
+server.listen(8890)
+
+function broadcast(str) {
+  server.connections.forEach(function (connection) {
+    connection.sendText(str)
+  });
+}
+
 console.log("Static file server running at\n  => http://localhost:" + port + "/\nCTRL + C to shutdown");

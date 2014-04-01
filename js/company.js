@@ -1,8 +1,8 @@
 'use strict';
 
 //Location information
-var locationLatitude = 41.85332709856991,
-locationLongitude = 12.444332400918938;
+var locationLatitude = 41.901556,
+locationLongitude = 12.502005;
 
 /* Ajax request for street information */
 function doRequest(request) {
