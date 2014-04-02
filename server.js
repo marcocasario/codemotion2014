@@ -11,8 +11,33 @@ http.createServer(function(request, response) {
   var uri = url.parse(request.url).pathname
     , filename = path.join(process.cwd(), uri);
   
+
+  function getContentType( filename ){
+    
+    if (filename.indexOf('.js') != -1){
+      return {'Content-Type': 'text/javascript'}
+
+    }else if ( filename.indexOf('.css') != -1 ){
+      return {'Content-Type': 'text/css'};
+
+    }else if (filename.indexOf('.html') != -1 ){
+      return {'Content-Type': 'text/html'};
+
+    }else if (filename.indexOf('.jpg') != -1){
+      return {'Content-type':'image/jpg'};
+
+    }else if (filename.indexOf('.png') != -1){
+      return {'Content-type':'image/png'};
+
+    }else{
+      return {'Content-Type': 'text/plain'};
+    }
+
+  }
+
   path.exists(filename, function(exists) {
-    var nowTime = new Date();
+    var nowTime = new Date(),
+    contentType = '';
     if(!exists) {
         filename = path.join(process.cwd(), file404);
     }
@@ -29,7 +54,8 @@ http.createServer(function(request, response) {
       }
  
       console.log(nowTime + "# Serve file:" + filename);
-      response.writeHead(200);
+      contentType = getContentType( filename );
+      response.writeHead(200, contentType);
       response.write(file, "binary");
       response.end();
     });
