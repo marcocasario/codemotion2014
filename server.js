@@ -6,23 +6,20 @@ var http = require("http"),
     port = process.argv[2] || 8888,
     file404 = '404.html';
  
-
 /* webserver */
 http.createServer(function(request, response) {
- 
   var uri = url.parse(request.url).pathname
     , filename = path.join(process.cwd(), uri);
   
   path.exists(filename, function(exists) {
-    
     var nowTime = new Date();
-
     if(!exists) {
         filename = path.join(process.cwd(), file404);
     }
- 
-    if (fs.statSync(filename).isDirectory()) filename += '/index.html';
- 
+    if (fs.statSync(filename).isDirectory()) {
+      filename += '/index.html';
+    }
+
     fs.readFile(filename, "binary", function(err, file) {
       if(err) {        
         response.writeHead(500, {"Content-Type": "text/plain"});
@@ -42,24 +39,37 @@ http.createServer(function(request, response) {
 
 /* websocket server */
 var server = ws.createServer(function (connection) {
-  connection.nickname = null
-  connection.on("text", function (str) {
-    if (connection.nickname === null) {
-      connection.nickname = str
-      broadcast(str+" entered")
-    } else
-      broadcast("["+connection.nickname+"] "+str)
-  })
-  connection.on("close", function () {
-    broadcast(connection.nickname+" left")
-  })
-})
-server.listen(8890)
+  var nowTime = new Date();
+  var newMessage = {status: "", message: "", time: nowTime.toJSON() };
+  
+  connection.nickname = null;
 
+  connection.on("text", function (str) {
+    if(connection.nickname === null) {
+      connection.nickname = str;
+      newMessage.status="in"
+      newMessage.message= str +" è entrato";
+      broadcast(JSON.stringify(newMessage));
+    }else{
+      newMessage.status="msg"
+      newMessage.message= connection.nickname +": "+ str;
+      broadcast(JSON.stringify(newMessage));
+    }
+  });
+  connection.on("close", function () {
+    newMessage.status="out"
+    newMessage.message= connection.nickname +":  è uscito";
+    broadcast(JSON.stringify(newMessage));
+  });
+  connection.on("error", function (e) {
+    console.error(nowTime + "# Error:" + connection.nickname, e);
+    connection.close();
+  });
+});
+server.listen(8890);
 function broadcast(str) {
   server.connections.forEach(function (connection) {
-    connection.sendText(str)
+    connection.sendText(str);
   });
 }
-
 console.log("Static file server running at\n  => http://localhost:" + port + "/\nCTRL + C to shutdown");

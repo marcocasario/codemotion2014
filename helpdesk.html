@@ -29,44 +29,51 @@
                 <nav id="nav">
                     <ul>
                         <li><a href="/" title="Home">Home</a></li>
-                        <li class="current"><a href="company.html" title="Company">Dove siamo</a></li>
+                        <li><a href="company.html" title="Company">Dove siamo</a></li>
                         <li><a href="contact.html" title="Contact">Contattaci</a></li>
-                        <li><a href="helpdesk.html" title="Help Desk">Help Desk</a></li>
+                        <li class="current"><a href="helpdesk.html" title="Help Desk">Help Desk</a></li>
                     </ul>
                     <a class="menu" href="#">Menu</a>
                 </nav>
             </header>
             
-            <section id="map-canvas" class="maps_section"></section>
+            <section id="support_section" class="support_section text_style">
+
+
+                <div class="welcome_message_area">Benvenuto, il supporto tecnico ti fornirà le informazioni necessarie per ogni tua esigenza.</div>
+                <div class="title_message_area hide">Dashboard</div>
+                <ul class="message_area"></ul>
+
+            </section>
             
             <section class="main_section">
                 
-                <article class="article clearfix">
-                    
-                    <h2 id="status">HTML5 Geolocation <strong>non</strong> &eraquo; supportato.</h1>
+                <article class="article clearfix nickname_area">
+                    <form id="form_nickname" class="form_box">
+                        <fieldset class="fieldset">
+                            <ol>
+                                <li class="left">
+                                    <label class="label" for="firstname">Nickname *</label><br>
+                                    <input class="input" id="nickname" name="nickname" type="text" placeholder="Inserisci il tuo nickname" required autofocus>
+                                </li>
+                                <li><br><button class="submit" type=submit>Send</button></li>
+                            </ol>
+                        </fieldset>
+                    </form>
                 </article>
-
-                <article class="article clearfix">
-                    <h2>Dati posizione corrente:</h2>
+                <article class="article clearfix send_message_area hide">
+                    <form id="form_message" class="form_box">
                         
-                    <div class="grid3">
-                        <div class="col">
-                            <label class="label">Latitude: </label><br>
-                            <span id="latitude"></span>
-                        </div>
-
-                        <div class="col">
-                            <label class="label">Longitude:</label><br>
-                            <span id="longitude"></span>
-                        </div>
-                        
-
-                        <div class="col">
-                            <label class="label">Vicino a te:</label><br>
-                            <span id="formatted_address"></span>
-                        </div>
-                    </div>
-                        
+                        <fieldset class="fieldset">
+                            <ol>
+                                <li class="left">
+                                    <label class="label" for="firstname">Inserisci il messaggio</label><br>
+                                    <input class="input" id="message" name="message" type="text" placeholder="nuovo messaggio" required autofocus>
+                                </li>
+                                <li><br><button class="submit" type=submit>Send</button></li>
+                            </ol>
+                        </fieldset>
+                    </form>
                 </article>
                 
             </section> <!-- /main_section -->
@@ -116,10 +123,8 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/company.js"></script>
-        <!-- Google Maps: change key to be your site's ID. -->
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3nvub6YdbJZLIKdNjcVDfh2vPbI60vus&sensor=false"></script>
-
+        <script src="js/helpdesk.js"></script>
+        
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
