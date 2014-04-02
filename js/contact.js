@@ -1,7 +1,3 @@
-function isNotNull( value ){
-    return ( typeof value !== 'undefined' && value !== null );
-}
-
 /*
 WebStorage / SessionStorage
 */
@@ -170,3 +166,22 @@ if (tests.dnd) {
     readfiles(this.files);
   };
 }
+
+
+/* NET API */
+function changeNetworkStatus(){
+  if (navigator.onLine) {
+    hide($('.save'));
+    show($('.submit'));
+  }else{
+    hide($('.submit'));
+    show($('.save'));
+  }
+}
+window.addEventListener("offline", function(e) {
+  changeNetworkStatus();
+});
+window.addEventListener("online", function(e) {
+  changeNetworkStatus();
+});
+changeNetworkStatus();
