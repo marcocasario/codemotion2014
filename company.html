@@ -37,7 +37,7 @@
                 </nav>
             </header>
             <div class="clearfix"></div>
-            <section class="banner_section"></section>
+            <section id="map-canvas" class="map_section"></section>
             <section class="main_section">
                 <article class="article clearfix">
                     
@@ -47,7 +47,13 @@
 
 
                     <!-- inserisci tui il codice html -->
-
+                    <div class="left">Accuracy: </div><div class="accuracy right">0</div><br>
+                    <div class="left">Altitude: </div><div class="altitude right">0</div><br>
+                    <div class="left">Altitude Accuracy: </div><div class="altitudeAccuracy right">0</div><br>
+                    <div class="left">Heading: </div><div class="heading right">0</div><br>
+                    <div class="left">Latitude: </div><div class="latitude right">0</div><br>
+                    <div class="left">Longitude: </div><div class="longitude right">0</div><br>
+                    <div class="left">Speed: </div><div class="speed right">0</div>
 
 
 
@@ -101,6 +107,9 @@
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script src="js/company.js"></script>
+        <!-- Google Maps: change key to be your site's ID. -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3nvub6YdbJZLIKdNjcVDfh2vPbI60vus&sensor=false"></script>
+
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
