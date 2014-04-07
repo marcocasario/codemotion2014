@@ -36,7 +36,11 @@
                     <a class="menu" href="#">Menu</a>
                 </nav>
             </header>
-            <section class="banner_section"></section>
+            <section id="support_section" class="support_section text_style">
+                <div class="welcome_message_area">Benvenuto, il supporto tecnico ti fornirà le informazioni necessarie per ogni tua esigenza.</div>
+                <div class="title_message_area hide">Dashboard</div>
+                <ul class="message_area"></ul>
+            </section>
             <section class="main_section">
                 <article class="article clearfix">
                     
@@ -46,9 +50,33 @@
 
 
                     <!-- inserisci tui il codice html -->
-
-
-
+                    <article class="article clearfix nickname_area">
+                    <form id="form_nickname" class="form_box">
+                        <fieldset class="fieldset">
+                            <ol>
+                                <li class="left">
+                                    <label class="label" for="nickname">Nickname *</label><br>
+                                    <input class="input" id="nickname" name="nickname" type="text" placeholder="Inserisci il tuo nickname" required autofocus>
+                                </li>
+                                <li><br><button class="submit" type=submit>Send</button></li>
+                            </ol>
+                        </fieldset>
+                    </form>
+                    </article>
+                    <article class="article clearfix send_message_area hide">
+                        <form id="form_message" class="form_box">
+                            
+                            <fieldset class="fieldset">
+                                <ol>
+                                    <li class="left">
+                                        <label class="label" for="message">Inserisci il messaggio</label><br>
+                                        <input class="input" id="message" name="message" type="text" placeholder="nuovo messaggio" required autofocus>
+                                    </li>
+                                    <li><br><button class="submit" type=submit>Send</button></li>
+                                </ol>
+                            </fieldset>
+                        </form>
+                    </article>
 
 
 
@@ -97,9 +125,8 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/helpdesk.js"></script>
+        
+        <script data-main="js/main" src="js/vendor/require.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

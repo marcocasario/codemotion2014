@@ -35,6 +35,13 @@ strong { font-weight: 500; }
 
 .banner_section { width: 880px; background: #fff; border-bottom: 1px solid #ccc; text-align: center; padding: 0 40px; }
 .banner_section img { vertical-align: bottom; }
+.support_section { width: 880px; height: 200px; padding: 0 40px; background: #fff; }
+.message_area{ height: 150px }
+
+.user_message{ list-style: none; margin-bottom: 10px; border-bottom: 1px solid #e8e8e8;}
+.in{color: green;}
+.out{color: red;}
+.msg{ color: #888888; }
 
 .main_section { width: 679px; float: left; padding: 40px 0; }
 .main_section .article { border-bottom: 1px solid #ccc; margin-bottom: 40px; padding: 0 40px 40px; }
