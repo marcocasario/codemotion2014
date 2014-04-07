@@ -1,7 +1,7 @@
 'use strict';
 
 //Location information
-var locationLatitude = 41.901556,
+var locationLatitude = 41.901556, //Stazione di Roma Termini
 locationLongitude = 12.502005;
 
 /* Ajax request for street information */
@@ -24,7 +24,7 @@ function loadDemo() {
   //controlliamo se il browser supporta le API per la geolocalizzazione
   if(navigator.geolocation) {
       $("#status").text("Il tuo browser supporta le API HTML5 Geolocation.");
-      navigator.geolocation.getCurrentPosition(updateLocation);
+      //navigator.geolocation.getCurrentPosition(updateLocation);
 
       navigator.geolocation.getCurrentPosition(
           function(position) {
