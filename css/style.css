@@ -26,7 +26,7 @@ strong { font-weight: 500; }
 
 #header { width: 880px; height: 120px; background: #22b89f; padding: 0 40px; }
 #header .logo { background: url('../img/logo.png') center center no-repeat; width: 156px; height: 51px; text-indent: -9999px; float: left; margin: 35px 0; }
-#header #nav { float: right; }
+#header #nav { float: right; height: 120px; }
 #header #nav li { list-style: none; display: inline; margin-left: 10px; line-height: 120px; }
 #header #nav li a { color: #fff; font-size: 15px; font-weight: 500; padding: 10px 15px; }
 #header #nav li.current a { background: #159983; border-radius: 4px; }
