@@ -38,38 +38,14 @@ strong { font-weight: 500; }
 
 .maps_section { width: 880px; background: #fff url('../img/loader.gif') center center no-repeat; border-bottom: 1px solid #ccc; padding: 0 40px; height: 440px;}
 
-.support_section { 
-  width: 880px; 
-  background: #fff;
-  border-bottom: 1px solid #ccc; 
-  padding: 0 40px; 
-  height: 300px;
-}
-
-.support_section .welcome_message_area{ 
-  padding: 10px 0 10px 0; 
-  width: 80%; 
-  margin: auto; 
-  left: 0;
-}
-
-.message_area{ 
-  padding: 10px; width: 80%; height: 220px; overflow: hidden; overflow-y: scroll; margin: 0; 
-  left: 0; 
-  top:10px;
-}
-
-.user_message{ 
-  list-style: none; margin-bottom: 10px; border-bottom: 1px solid #e8e8e8;
-}
-.in{
-  color: green;
-}
-.out{
-  color: red;
-}
+/* support */
+.support_section { width: 880px; background: #fff;border-bottom: 1px solid #ccc;   padding: 0 40px; height: 300px;}
+.support_section .welcome_message_area{   padding: 10px 0 10px 0; width: 80%; margin: auto; left: 0;}
+.message_area{ padding: 10px; width: 80%; height: 220px; overflow: hidden; overflow-y: scroll; margin: 0; left: 0; top:10px;}
+.user_message{ list-style: none; margin-bottom: 10px; border-bottom: 1px solid #e8e8e8;}
+.in{color: green;}
+.out{color: red;}
 .msg{ color: #888888; }
-
 
 .main_section { width: 679px; float: left; padding: 40px 0; }
 .main_section .article { border-bottom: 1px solid #ccc; margin-bottom: 40px; padding: 0 40px 40px; }
@@ -111,15 +87,12 @@ strong { font-weight: 500; }
 
 /* Media Queries */
 
-
+/* Desktop */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
 
   body { background: #333; }
-  
   #container { width: 768px; box-shadow: none; }
-  
   #header { width: 688px; }
-  
   .banner_section { width: 688px; }
   .maps_section { width: 688px; height: 400px; }
   .support_section { width: 688px; height: 400px; }
@@ -144,6 +117,7 @@ strong { font-weight: 500; }
 
 }
 
+/* Tablet */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   
   body { background: #333; }
@@ -185,6 +159,7 @@ strong { font-weight: 500; }
   
 }
 
+/* Smartphone */
 @media only screen and (max-width: 479px) {
   
   body { background: #333; }
