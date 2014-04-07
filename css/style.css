@@ -43,15 +43,23 @@ strong { font-weight: 500; }
 .main_section .article h1 { font-size: 18px; line-height: 25px; margin-bottom: 10px; width: 330px; float: right; }
 .main_section .article p { font-size: 13px; line-height: 20px; width: 330px; float: right; }
 
-.main_section .form_box { padding: 0 40px; }
+.main_section .form_box { padding: 0 20px; }
 .main_section .form_box ol { list-style: none; }
 .main_section .form_box .label { font-size: 14px; }
-.main_section .form_box .input { width: 250px; height: 37px; font-size: 13px; line-height: 37px; background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 0 15px; color: #999; margin: 10px 0 40px; }
-.main_section .form_box .textarea { width: 565px; height: 130px; font-size: 13px; line-height: 37px; background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 0 15px; color: #999; margin: 10px 0 40px; }
+.main_section .form_box .input { width: 200px; height: 37px; font-size: 13px; line-height: 37px; background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 0 15px; color: #999; margin: 10px 0 40px; }
+.main_section .form_box .textarea { width: 500px; height: 130px; font-size: 13px; line-height: 37px; background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 0 15px; color: #999; margin: 10px 0 40px; }
 .main_section .form_box .submit { width: 120px; height: 37px; font-size: 13px; line-height: 37px; background: #22b89f; border: 1px solid #22b89f; border-radius: 4px; padding: 0 15px; color: #fff; text-transform: uppercase; margin: 10px 0 40px; float: right; cursor: pointer; outline: none; }
 .main_section .form_box .submit:hover { background: #159983; }
+.main_section .form_box .save { width: 120px; height: 37px; font-size: 13px; line-height: 37px; background: #f39c12; border: 1px solid #d35400; border-radius: 4px; padding: 0 15px; color: #fff; text-transform: uppercase; margin: 10px 0 40px; float: right; cursor: pointer; outline: none; }
+.main_section .form_box .save:hover { background: #d35400; }
 
 .map_section { width: 880px; height: 440px; background: #fff url('../img/loader.gif') center center no-repeat; border-bottom: 1px solid #ccc; padding: 0 40px;}
+
+/* Contact Page */
+#holder { border: 10px dashed #ccc; min-height: 150px; margin: 20px auto;}
+#holder.hover { border: 10px dashed #0c0; }
+#holder img { display: block; margin: 10px auto; }
+#holder p { margin: 10px; font-size: 14px; }
 
 #aside { width: 199px; background: #ececec; float: right; padding: 40px; border-left: 1px solid #ccc; }
 #aside .callout_text li { list-style: none; margin-bottom: 30px; }

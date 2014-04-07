@@ -41,16 +41,71 @@
                 <article class="article clearfix">
                     
 
-
-
-
-
                     <!-- inserisci tui il codice html -->
 
+                    <form id="form" class="form_box">
+                    <fieldset class="fieldset">
+                        <ol>
+                            <li class="left">
+                                <label class="label" for="firstname">Name *</label><br>
+                                <input class="input" id="firstname" name="firstname" type="text" placeholder="First and last name" required autofocus>
+                            </li>
+                            <li class="right">
+                                <label class="label" for="email">Email *</label><br>
+                                <input class="input" id="email" name="email" type="email" placeholder="example@domain.com" required>
+                            </li>
+                        </ol>
+                    </fieldset>
+                    <fieldset class="fieldset">
+                        <ol>
+                            <li class="left">
+                                <label class="label" for="born">Date of birth *</label><br>
+                                <input class="input" id="born" name="born" type="date" min="1959-01-01" max="2010-01-01" required>
+                            </li>
+                            <li class="right">
+                                <label class="label" for="topic">Topic *</label><br>
+                                <input class="input" id="topic" name="topic" type="text" list="topic_list" required>
+                                <datalist id="topic_list">
+                                    <option>help</option>
+                                    <option>job</option>
+                                    <option>info</option>
+                                    <option>thanks</option>
+                                </datalist>
+                            </li>
+                        </ol>
+                    </fieldset>
+                    <fieldset class="fieldset">
+                        <ol>
+                            <li class="left">
+                                <label class="label" for="note">Note *</label><br>
+                                <textarea class="textarea" id="note" name="note" rows="5" required></textarea>
+                            </li>
+                        </ol>
+                    </fieldset>
 
+                    <fieldset class="fieldset">
+                        <ol>
+                            <li class="left" id="upload">
+                                <label class="label" for="fileupload">Allega la tua foto</label><br>
+                                <div id="holder"></div> 
+                                <p id="upload" class="hidden"><label>Drag & drop non supportato, ma puoi comunque inviare la tua foto:<br><input type="file" id="fileupload" name="fileupload"></label></p>
+                                <p id="filereader">File API & FileReader API non supportati</p>
+                                <p id="formdata">XHR2's FormData non è supportato</p>
+                                <p id="progress">XHR2's upload progress non supportato</p>
+                                <p>Trasferimento: <progress id="uploadprogress" min="0" max="100" value="0">0</progress></p>
+                                <p>Trascina e rilascia un'immagine dal tuo desktop nell'area tratteggiata.</p>
+                            </li>
+                        </ol>
+                    </fieldset>
 
-
-
+                    
+                    <fieldset class="fieldset">
+                        <fieldset class="fieldset">
+                            <button class="submit" type=submit>Send</button>
+                            <button class="save" type=submit>Save</button>
+                        </fieldset>
+                    </fieldset>
+                </form>
 
 
                 </article>

@@ -77,5 +77,42 @@ http.createServer(function(request, response) {
     });
   });
 }).listen(parseInt(port, 10));
+ 
+
+/* websocket server */
+var server = ws.createServer(function (connection) {
+  var nowTime = new Date();
+  var newMessage = {status: "", message: "", time: nowTime.toJSON() };
+  
+  connection.nickname = null;
+
+  connection.on("text", function (str) {
+    if(connection.nickname === null) {
+      connection.nickname = str;
+      newMessage.status="in"
+      newMessage.message= str +" è entrato";
+      broadcast(JSON.stringify(newMessage));
+    }else{
+      newMessage.status="msg"
+      newMessage.message= connection.nickname +": "+ str;
+      broadcast(JSON.stringify(newMessage));
+    }
+  });
+  connection.on("close", function () {
+    newMessage.status="out"
+    newMessage.message= connection.nickname +":  è uscito";
+    broadcast(JSON.stringify(newMessage));
+  });
+  connection.on("error", function (e) {
+    console.error(nowTime + "# Error:" + connection.nickname, e);
+    connection.close();
+  });
+});
+server.listen(8890);
+function broadcast(str) {
+  server.connections.forEach(function (connection) {
+    connection.sendText(str);
+  });
+}
 
 console.log("Static file server running at\n  => http://localhost:" + port + "/\nCTRL + C to shutdown");
