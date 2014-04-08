@@ -45,7 +45,7 @@ strong { font-weight: 500; }
 .out{color: red;}
 .msg{ color: #888888; }
 
-.maps_section { width: 880px; background: #fff url('../img/loader.gif') center center no-repeat; border-bottom: 1px solid #ccc; padding: 0 40px; height: 440px;}
+.map_section { width: 880px; height: 440px; background: #fff url('../img/loader.gif') center center no-repeat; border-bottom: 1px solid #ccc; padding: 0 40px;}
 
 /* support */
 .support_section { width: 880px; background: #fff;border-bottom: 1px solid #ccc;   padding: 0 40px; height: 300px;}
@@ -76,7 +76,7 @@ strong { font-weight: 500; }
 .main_section .form_box .save { width: 120px; height: 37px; font-size: 13px; line-height: 37px; background: #f39c12; border: 1px solid #d35400; border-radius: 4px; padding: 0 15px; color: #fff; text-transform: uppercase; margin: 10px 0 40px; float: right; cursor: pointer; outline: none; }
 .main_section .form_box .save:hover { background: #d35400; }
 
-.map_section { width: 880px; height: 440px; background: #fff url('../img/loader.gif') center center no-repeat; border-bottom: 1px solid #ccc; padding: 0 40px;}
+
 
 /* Contact Page */
 #holder { border: 10px dashed #ccc; min-height: 150px; margin: 20px auto;}
@@ -111,7 +111,8 @@ strong { font-weight: 500; }
   #container { width: 768px; box-shadow: none; }
   #header { width: 688px; }
   .banner_section { width: 688px; }
-  .maps_section { width: 688px; height: 400px; }
+  
+  .map_section { width: 688px; height: 400px; }
   .support_section { width: 688px; height: 400px; }
   .message_area{ height: 380px; }
 
@@ -185,7 +186,7 @@ strong { font-weight: 500; }
   #header #nav .menu { display: block; visibility: visible; width: 34px; height: 24px; background: url('../img/menu.png') center center no-repeat; position: absolute; top: 30px; right: 20px; text-indent: -9999px; }
 
   .banner_section { display: none; }
-  .maps_section { width: 480px; height: 400px; padding: 0;}
+  .map_section { width: 480px; height: 400px; padding: 0;}
   .support_section { width: 480px; height: 400px; padding: 0;}
   .message_area{ height: 380px; }
   
@@ -260,6 +261,7 @@ strong { font-weight: 500; }
   .main_section .article h1 { width: 300px; float: none; }
   .main_section .article p { width: 300px; float: none; }
 
+  .map_section { width: 320px; height: 400px; padding: 0;}
 
   #aside { 
     width: 300px; 

@@ -1,117 +1,65 @@
-/* Main functions */
+'use strict';
+
+/* 
+* Main functions 
+* @Description: 
+* - inizializza l'oggetto codemotion2014
+* - carica tutte le librerie comuni
+*/
+
+//inizializziamo l'oggetto principale del nostro sito web
+var codemotion2014 = {
+  model: {}, 
+  view: {}, 
+  controller: {},
+  commonUtils: {},
+  services: {}
+};
+
+var initialize = function(){};
+
 requirejs.config({
-    //By default load any module IDs from js/lib
-    baseUrl: 'js/vendor',
-    //except, if the module ID starts with "app",
-    //load it from the js/app directory. paths
-    //config is relative to the baseUrl, and
-    //never includes a ".js" extension since
-    //the paths config could be for a directory.
+    //By default load any module IDs from js/vendor
+    baseUrl: 'js/',
     paths: {
-        common: '../common',
-        plugins: '../plugins',
-        company: '../company',
-        contact: '../contact',
-        helpdesk: '../helpdesk'
+        jquery: [
+            'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
+            //If the CDN location fails, load from this location
+            'vendor/jquery-1.10.2.min'
+        ],
+        googlemap: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC3nvub6YdbJZLIKdNjcVDfh2vPbI60vus&sensor=false&callback=initialize',
+        signals: 'vendor/signals'
     }
 });
 
 
 // Start the main app logic.
-requirejs(['jquery-1.10.2.min', 'common', 'plugins'], function   ($) {
-    //jQuery, common and plugins
+requirejs(['vendor/modernizr-2.6.2.min'], function   ($) {
     //loaded and can be used here now.
-    console.log('jQuery, common and plugins loaded');
-    
-    //controlliamo se servono le altre librerie
-    codemotion2014.runtimeLoadLibs.checkLibIsLoaded( window.location.pathname );
+    console.log('modernizr loaded');
 
+
+
+    requirejs(['signals'], function   ($) {
+        //loaded and can be used here now.
+        console.log('signals loaded');
+
+        requirejs(['jquery'], function   ($) {
+            //jQuery, common and plugins
+            //loaded and can be used here now.
+            console.log('jQuery');
+            
+            requirejs(['loadLibrary', 'plugins', 'common'], function   ($) {
+                console.log('library, common and plugins loaded');
+                
+                //controlliamo se servono le altre librerie
+                codemotion2014.runtimeLoadLibs.checkLibIsLoaded();
+
+                initialize = codemotion2014.runtimeLoadLibs.checkLibIsLoaded;
+            });
+
+        });
+    });
 });
 
-//inizializziamo l'oggetto del nostro sito web
-var codemotion2014 = {};
 
-//include other libs
-(function( requirejs, codemotion2014 ){
-
-
-  function runtimeLoadLibs(){
-
-    /* ------ PRIVATE ------ */
-
-    function getCompanyLib (){
-      requirejs(['company'], function   ($) {
-          //jQuery, common and plugins
-          //loaded and can be used here now.
-          console.log('company lib loaded');
-      });
-    };
-
-    function getContactLib (){
-      requirejs(['contact'], function   ($) {
-          //jQuery, common and plugins
-          //loaded and can be used here now.
-          console.log('contact lib loaded');
-      });
-    };
-
-    function getHelpdeskLib (){
-      requirejs(['helpdesk'], function   ($) {
-          //jQuery, common and plugins
-          //loaded and can be used here now.
-          console.log('help desk lib loaded');
-      });
-    };
-
-    /* ------ PUBLIC ------ */
-
-    this.checkLibIsLoaded = function(path){
-
-      switch (path){
-        case '/company.html':
-          if (!isNotNull(window.loadDemo)){
-            getCompanyLib();  
-          }
-        break;
-        case '/contact.html':
-          if (!isNotNull(window.loadDemo)){
-            getContactLib();  
-          }
-        break;
-
-        case '/helpdesk.html':
-          if (!isNotNull(window.loadDemo)){
-            getHelpdeskLib();  
-          }
-        break;
-
-      }
-
-    }
-
-    return this;
-
-  }
-
-  codemotion2014.runtimeLoadLibs = new runtimeLoadLibs;
-
-})( requirejs, codemotion2014 );
-
-//check if is not null
-function isNotNull( value ){
-    return ( typeof value !== 'undefined' && value !== null );
-}
-
-//show element
-function show( dom ){
-  if( isNotNull(dom) && typeof dom === 'object'){
-    dom.removeClass('hide');
-  }
-}
-
-//hide element
-function hide( dom ){
-  if( isNotNull(dom) && typeof dom === 'object'){
-    dom.addClass('hide');
-  }  
-}
