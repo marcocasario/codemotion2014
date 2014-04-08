@@ -1,10 +1,8 @@
 /*ContactController.js*/
-'use strict';
-
 /* contact.js */
 (function( codemotion2014 ){
-
-  function Contact(){
+  'use strict';
+  function ContactController(){
 
     /* ------ PRIVATE PROPERTY ------ */
 
@@ -61,6 +59,18 @@
         return true;
     }
 
+    /* NET API */
+    function isOnlineHandler( online ){
+
+      if (online) {
+        codemotion2014.commonUtils.hide($('.save'));
+        codemotion2014.commonUtils.show($('.submit'));
+      }else{
+        codemotion2014.commonUtils.hide($('.submit'));
+        codemotion2014.commonUtils.show($('.save'));
+      }
+
+    }
 
     
 
@@ -77,7 +87,7 @@
             formData.append('file', files[i]);
           }
           //richiama la funzione per leggere un file
-          previewfile(files[i]);
+          codemotion2014.view.contact.previewfile(files[i], tests);
         }
         // now post a new XHR request
         if (tests.formdata) {
@@ -105,6 +115,8 @@
         }
     }
 
+
+
     /* ------ PUBLIC FUNCTION ------ */
     /* Gestisce il salvataggio al click dell'utente sul tasto send del form */
     this.saveUser = function (e){
@@ -113,17 +125,19 @@
         if ( codemotion2014.model.contact.setData($(this).serializeArray())){
             saveLocalstorageData();
         }
-    }
+    };
 
     this.getUserInformation = function (){
         //richiediamo i dati all'oggetto e popoliamo il model
         var response = localStorage.getItem('userData');
         codemotion2014.model.contact.setData( JSON.parse(response) );
         codemotion2014.view.contact.setFormData( codemotion2014.model.user );
-    }
+    };
 
+    this.getSupportedType = function(){
+      return acceptedTypes;
+    }
     
-    /* ------ PUBLIC ------ */
     if (tests.dnd) { 
       holder.ondragover = function () { this.className = 'hover'; return false; };
       holder.ondragend = function () { this.className = ''; return false; };
@@ -138,20 +152,7 @@
         readfiles(this.files);
       };
     }
-
-
-    /* NET API */
-    function isOnlineHandler( online ){
-
-      if (online) {
-        codemotion2014.commonUtils.hide($('.save'));
-        codemotion2014.commonUtils.show($('.submit'));
-      }else{
-        codemotion2014.commonUtils.hide($('.submit'));
-        codemotion2014.commonUtils.show($('.save'));
-      }
-
-    }
+    
     
     //Listeners
     codemotion2014.commonUtils.onlineStatus.add(isOnlineHandler); //add listener
@@ -164,10 +165,10 @@
   }
   
   //inizializziamo il nostro oggetto
-  codemotion2014.contact = new Contact;
+  codemotion2014.controller.contact = new ContactController();
   
   //recuperiamo i dati dall'oggetto localStorage
-  codemotion2014.contact.getUserInformation();
+  codemotion2014.controller.contact.getUserInformation();
 
   codemotion2014.commonUtils.isOnlineHandler();
 

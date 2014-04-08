@@ -1,15 +1,11 @@
 /* HelpDeskView.js */
-'use strict';
-
 //inizializziamo app
 (function( codemotion2014 ){
-
+  'use strict';
   function HelpDeskModel(){
 
     /* ------ Private Properties ------ */
     var nickname = '';
-
-
     
     /* ------ PUBLIC FUNCTION ------ */
 
@@ -26,7 +22,7 @@
     //getNickname => restituisce la proprieta nickname
     this.getNickname = function(){
       return nickname;
-    }
+    };
     
     return this;
 

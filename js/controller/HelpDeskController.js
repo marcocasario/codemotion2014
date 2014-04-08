@@ -2,9 +2,8 @@
 * HelpDeskController.js
 * Description: 
 */
-
-'use strict';
 (function( codemotion2014 ){
+'use strict';
 
   function HelpDeskController(){
 

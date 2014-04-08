@@ -1,10 +1,7 @@
 /*ContactView.js*/
 
-'use strict';
-/* contact.js */
-
 (function( codemotion2014 ){
-
+  'use strict';
   /* Oggetto UserModel() */
   function ContactView() {
     
@@ -36,8 +33,8 @@
     }
 
     //mostra un anteprima del file
-    this.previewfile = function (file) {
-      if (tests.filereader === true && acceptedTypes[file.type] === true) {
+    this.previewfile = function (file, tests) {
+      if (tests.filereader === true && codemotion2014.controller.contact.getSupportedType()[file.type] === true) {
         var reader = new FileReader();
         reader.onload = function (event) {
           var image = new Image();
