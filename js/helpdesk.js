@@ -1,52 +1,47 @@
-//helpdesk.js
-//inizializziamo connection
+/*helpdesk.js*/
+//inizializziamo app
 var app = {
     connection: {}, 
     nickname: '',
     status: 'closed'
 };
 
-/* funzione per inviare i messaggi al server WS */
-function sendWsMessage(){
-    
-    var message = $('#message').val();
-    if ( isNotNull( message )){
-        console.log('Invio del messaggio al server: ' + message);
-        app.connection.send(message);
-        $('#message').val('');
-    }
 
-}
+$(document).ready( function (){
+    if (!Modernizr.websockets) {alert("No WebSocket here");}
 
-function clearDomMessages(){
-  
-  $('.welcome_message_area').hide();
-  $('.title_message_area').show();
-  $('.message_area').empty();
+    //form event submit
+    $('#form_nickname').submit(function (event) {
+      //evitiamo il submit del form
+      event.preventDefault();
 
-}
+      if ( setNickname() ){
+        hide( $('.nickname_area') );
+        show( $('.send_message_area') );
+        setWSConnection();
+      }
 
+      //evitiamo il submit del form
+      return false;
+    });
 
-function setDomMessage( message ){
+    $('#form_message').submit(function (event) {
+      //evitiamo il submit del form
+       event.preventDefault();
+       sendWsMessage();
+       //evitiamo il submit del form
+       return false;
+    });
+});
 
-    var newMessage = jQuery.parseJSON( message ),
-    element = document.createElement('li'),
-    domElement = $('.message_area'),
-    time = '';
-
-    function getTime(){
-      var newTime = new Date(newMessage.time);
-      return newTime.getUTCHours()+":"+newTime.getUTCMinutes();
-    }
-
-    time = getTime();
-
-    element.className = 'user_message'+' ' + newMessage.status;
-    
-    element.appendChild (document.createTextNode("["+time+"] " + newMessage.message) );
-
-    domElement.append( element );
-    domElement.animate({'scrollTop': domElement[0].scrollHeight});
+//valorizza l'oggetto app.nickname
+function setNickname(){
+  var newNickname = $('#nickname').val();
+  if ( isNotNull( newNickname ) && newNickname.length > 3){
+    app.nickname = newNickname;
+    return true;
+  }
+  return false;
 
 }
 
@@ -76,12 +71,44 @@ function setWSConnection(){
     app.connection.onmessage = function (event) {
         setDomMessage(event.data);
     }
-
-    
-
   }   
 }
 
+//pulisce l'area messaggi alla prima connessione dell'utente.
+function clearDomMessages(){
+  
+  $('.welcome_message_area').hide();
+  $('.title_message_area').show();
+  $('.message_area').empty();
+
+}
+
+
+//scrive i messaggi che arrivano dal server mentre la connessione websocket resta in ascolto
+function setDomMessage( message ){
+
+  var newMessage = jQuery.parseJSON( message ),
+  element = document.createElement('li'),
+  domElement = $('.message_area'),
+  time = '';
+
+  function getTime(){
+    var newTime = new Date(newMessage.time);
+    return newTime.getUTCHours()+":"+newTime.getUTCMinutes();
+  }
+
+  time = getTime();
+
+  element.className = 'user_message'+' ' + newMessage.status;
+  
+  element.appendChild (document.createTextNode("["+time+"] " + newMessage.message) );
+
+  domElement.append( element );
+  domElement.animate({'scrollTop': domElement[0].scrollHeight});
+
+}
+
+//chiude la connessione al server webSocket
 function closeWSConnection(){
   if (app.connection.status === 'open'){
     app.connection.close();
@@ -89,46 +116,13 @@ function closeWSConnection(){
   }
 }
 
-function setNickname(){
-  var newNickname = $('#nickname').val();
-  if ( isNotNull( newNickname ) && newNickname.length > 3){
-    app.nickname = newNickname;
-    return true;
+function sendWsMessage(){
+    
+  var message = $('#message').val();
+  if ( isNotNull( message )){
+      console.log('Invio del messaggio al server: ' + message);
+      app.connection.send(message);
+      $('#message').val('');
   }
-  return false;
+
 }
-
-$(document).ready( function (){
-
-    if (!Modernizr.websockets) {
-      alert("No WebSocket here");
-    }
-    //form event submit
-    $('#form_nickname').submit(function (event) {
-      //evitiamo il submit del form
-      event.preventDefault();
-
-      if ( setNickname() ){
-        hide( $('.nickname_area') );
-        show( $('.send_message_area') );
-        setWSConnection();
-      }
-
-      //evitiamo il submit del form
-      return false;
-
-    });
-
-    $('#form_message').submit(function (event) {
-       //evitiamo il submit del form
-       event.preventDefault();
-       sendWsMessage();
-       //evitiamo il submit del form
-       return false;
-
-    });
-
-    //window.onbeforeunload=function(){ closeWSConnection };
-    //window.onunload=function(){ closeWSConnection };
-
-});

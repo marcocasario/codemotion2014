@@ -114,4 +114,5 @@ function broadcast(str) {
     connection.sendText(str);
   });
 }
+
 console.log("Static file server running at\n  => http://localhost:" + port + "/\nCTRL + C to shutdown");

@@ -28,56 +28,64 @@
                 <h1 class="logo">Training</h1>
                 <nav id="nav">
                     <ul>
-                        <li><a href="/" title="Home">Home</a></li>
-                        <li><a href="company.html" title="Company">Dove siamo</a></li>
-                        <li><a href="contact.html" title="Contact">Contattaci</a></li>
-                        <li class="current"><a href="helpdesk.html" title="Help Desk">Help Desk</a></li>
+                        <li><a href="index.html" title="Home">Home</a></li>
+                        <li><a href="company.html" title="Company">Company</a></li>
+                        <li><a href="contact.html" title="Contact">Contact</a></li>
+                        <li class="current"><a href="helpdesk.html" title="Help desk">Help desk</a></li>
+
                     </ul>
                     <a class="menu" href="#">Menu</a>
                 </nav>
             </header>
-            
             <section id="support_section" class="support_section text_style">
-
-
                 <div class="welcome_message_area">Benvenuto, il supporto tecnico ti fornirà le informazioni necessarie per ogni tua esigenza.</div>
                 <div class="title_message_area hide">Dashboard</div>
                 <ul class="message_area"></ul>
-
             </section>
-            
             <section class="main_section">
-                
-                <article class="article clearfix nickname_area">
+                <article class="article clearfix">
+                    
+
+
+
+
+
+                    <!-- inserisci tui il codice html -->
+                    <article class="article clearfix nickname_area">
+
                     <form id="form_nickname" class="form_box">
                         <fieldset class="fieldset">
                             <ol>
                                 <li class="left">
-                                    <label class="label" for="firstname">Nickname *</label><br>
+                                    <label class="label" for="nickname">Nickname *</label><br>
                                     <input class="input" id="nickname" name="nickname" type="text" placeholder="Inserisci il tuo nickname" required autofocus>
                                 </li>
                                 <li><br><button class="submit" type=submit>Send</button></li>
                             </ol>
                         </fieldset>
                     </form>
-                </article>
-                <article class="article clearfix send_message_area hide">
-                    <form id="form_message" class="form_box">
-                        
-                        <fieldset class="fieldset">
-                            <ol>
-                                <li class="left">
-                                    <label class="label" for="firstname">Inserisci il messaggio</label><br>
-                                    <input class="input" id="message" name="message" type="text" placeholder="nuovo messaggio" required autofocus>
-                                </li>
-                                <li><br><button class="submit" type=submit>Send</button></li>
-                            </ol>
-                        </fieldset>
-                    </form>
-                </article>
-                
-            </section> <!-- /main_section -->
 
+                    </article>
+                    <article class="article clearfix send_message_area hide">
+                        <form id="form_message" class="form_box">
+                            
+                            <fieldset class="fieldset">
+                                <ol>
+                                    <li class="left">
+                                        <label class="label" for="message">Inserisci il messaggio</label><br>
+                                        <input class="input" id="message" name="message" type="text" placeholder="nuovo messaggio" required autofocus>
+                                    </li>
+                                    <li><br><button class="submit" type=submit>Send</button></li>
+                                </ol>
+                            </fieldset>
+                        </form>
+                    </article>
+
+
+
+
+                </article>
+            </section>
             <aside id="aside" class="clearfix">
                 <ul class="callout_text clearfix">
                     <li>
@@ -91,6 +99,7 @@
                     <li>
                         <h2>Mario Klingemann a Codemotion Roma 2014 – CREATIVITY</h2>
                         <p>“Il mondo del digitale permette a tutti di poter aver un accesso più immediato alle informazioni, e quindi, di conseguenza, è più semplice creare, essere protagonisti attivi. Non più o non solo consumer, ma soprattutto maker”</p>
+
                     </li>
                 </ul>
                 <ul class="callout_images">
@@ -111,7 +120,6 @@
                     </li>
                 </ul>
             </aside>
-            
             <div class="clr"></div>
             <footer id="footer">
                 <p class="copy">&copy; Copyright Training. All Right Reserved.</p>
@@ -119,12 +127,9 @@
             </footer>
         </div><!-- container -->
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/helpdesk.js"></script>
         
+        <script data-main="js/main" src="js/vendor/require.js"></script>
+
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

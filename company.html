@@ -28,67 +28,57 @@
                 <h1 class="logo">Training</h1>
                 <nav id="nav">
                     <ul>
-                        <li><a href="/" title="Home">Home</a></li>
-                        <li class="current"><a href="company.html" title="Company">Dove siamo</a></li>
-                        <li><a href="contact.html" title="Contact">Contattaci</a></li>
-                        <li><a href="helpdesk.html" title="Help Desk">Help Desk</a></li>
+
+                        <li><a href="index.html" title="Home">Home</a></li>
+                        <li class="current"><a href="company.html" title="Company">Company</a></li>
+                        <li><a href="contact.html" title="Contact">Contact</a></li>
+                        <li><a href="helpdesk.html" title="Help desk">Help desk</a></li>
+
                     </ul>
                     <a class="menu" href="#">Menu</a>
                 </nav>
             </header>
-            
-            <section id="map-canvas" class="maps_section"></section>
-            
+
+            <div class="clearfix"></div>
+            <section id="map-canvas" class="map_section"></section>
             <section class="main_section">
-                
                 <article class="article clearfix">
                     
-                    <h2 id="status">HTML5 Geolocation <strong>non</strong> &eraquo; supportato.</h1>
+
+
+
+
+
+                    <!-- inserisci tui il codice html -->
+                    <div class="left">Accuracy: </div><div class="accuracy right">0</div><br>
+                    <div class="left">Altitude: </div><div class="altitude right">0</div><br>
+                    <div class="left">Altitude Accuracy: </div><div class="altitudeAccuracy right">0</div><br>
+                    <div class="left">Heading: </div><div class="heading right">0</div><br>
+                    <div class="left">Latitude: </div><div class="latitude right">0</div><br>
+                    <div class="left">Longitude: </div><div class="longitude right">0</div><br>
+                    <div class="left">Speed: </div><div class="speed right">0</div>
+
+
+
+
+
+
                 </article>
-
-                <article class="article clearfix">
-                    <h2>Dati posizione corrente:</h2>
-                        
-                    <div class="grid3">
-                        <div class="col">
-                            <label class="label">Latitude:</label><br>
-                            <span id="latitude"></span>
-                        </div>
-
-                        <div class="col">
-                            <label class="label">Longitude:</label><br>
-                            <span id="longitude"></span>
-                        </div>
-                        
-
-                        <div class="col">
-                            <label class="label">Altre informazioni:</label><br>
-                            <span id="formatted_address"></span>
-                        </div>
-
-                        <div class="col">
-                            <label class="label">Time:</label><br>
-                            <span id="time"></span>
-                        </div>
-                    </div>
-                        
-                </article>
-                
-            </section> <!-- /main_section -->
-
+            </section>
             <aside id="aside" class="clearfix">
                 <ul class="callout_text clearfix">
                     <li>
-                        <h2>Il Mobile secondo Chris Mills: a Codemotion Roma 2014!</h2>
-                        <p>“Il Mobile web browsing dal punto di vista dell’end user significa libertà di accedere con molti device differenti, ma per gli sviluppatori, invece, questa è una sfida continua”</p>
+                        <h2>Text #1</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </li>
                     <li>
-                        <h2>Hack, Maker e Internet of Things a Codemotion Roma 2014</h2>
-                        <p>Hack e Internet of Things: Codemotion Roma 2014 è anche l’immancabile (e doppio) appuntamento con i Maker.</p>
+                        <h2>Text #2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </li>
                     <li>
-                        <h2>Mario Klingemann a Codemotion Roma 2014 – CREATIVITY</h2>
-                        <p>“Il mondo del digitale permette a tutti di poter aver un accesso più immediato alle informazioni, e quindi, di conseguenza, è più semplice creare, essere protagonisti attivi. Non più o non solo consumer, ma soprattutto maker”</p>
+                        <h2>Text #3</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
                     </li>
                 </ul>
                 <ul class="callout_images">
@@ -109,19 +99,16 @@
                     </li>
                 </ul>
             </aside>
-            
+
             <div class="clr"></div>
             <footer id="footer">
                 <p class="copy">&copy; Copyright Training. All Right Reserved.</p>
                 <a class="privacy" href="#" title="Privacy Policy">Privacy Policy</a>
             </footer>
         </div><!-- container -->
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/company.js"></script>
+        
+        <script data-main="js/main" src="js/vendor/require.js"></script>
+        
         <!-- Google Maps: change key to be your site's ID. -->
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3nvub6YdbJZLIKdNjcVDfh2vPbI60vus&sensor=false"></script>
 

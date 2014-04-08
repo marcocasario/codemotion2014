@@ -28,18 +28,24 @@
                 <h1 class="logo">Training</h1>
                 <nav id="nav">
                     <ul>
-                        <li><a href="/" title="Home">Home</a></li>
-                        <li><a href="company.html" title="Company">Dove siamo</a></li>
-                        <li class="current"><a href="contact.html" title="Contact">Contattaci</a></li>
-                        <li><a href="helpdesk.html" title="Help Desk">Help Desk</a></li>
+
+                        <li><a href="index.html" title="Home">Home</a></li>
+                        <li><a href="company.html" title="Company">Company</a></li>
+                        <li class="current"><a href="contact.html" title="Contact">Contact</a></li>
+                        <li><a href="helpdesk.html" title="Help desk">Help desk</a></li>
                     </ul>
                     <a class="menu" href="#">Menu</a>
                 </nav>
             </header>
-            <div class="clearfix"></div>
+            <section class="banner_section"></section>
             <section class="main_section">
-                
-                <form id="form" class="form_box">
+                <article class="article clearfix">
+                    
+
+                    <!-- inserisci tui il codice html -->
+
+                    <form id="form" class="form_box">
+
                     <fieldset class="fieldset">
                         <ol>
                             <li class="left">
@@ -92,29 +98,35 @@
                                 <p>Trascina e rilascia un'immagine dal tuo desktop nell'area tratteggiata.</p>
                             </li>
                         </ol>
-                      
+
                     </fieldset>
+
                     
                     <fieldset class="fieldset">
-                        <button class="submit" type=submit>Send</button>
-                        <button class="save" type=submit>Save</button>
+                        <fieldset class="fieldset">
+                            <button class="submit" type=submit>Send</button>
+                            <button class="save" type=submit>Save</button>
+                        </fieldset>
                     </fieldset>
                 </form>
-            </section> <!-- /main_section -->
 
+
+                </article>
+            </section>
             <aside id="aside" class="clearfix">
                 <ul class="callout_text clearfix">
                     <li>
-                        <h2>Il Mobile secondo Chris Mills: a Codemotion Roma 2014!</h2>
-                        <p>“Il Mobile web browsing dal punto di vista dell’end user significa libertà di accedere con molti device differenti, ma per gli sviluppatori, invece, questa è una sfida continua”</p>
+                        <h2>Text #1</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </li>
                     <li>
-                        <h2>Hack, Maker e Internet of Things a Codemotion Roma 2014</h2>
-                        <p>Hack e Internet of Things: Codemotion Roma 2014 è anche l’immancabile (e doppio) appuntamento con i Maker.</p>
+                        <h2>Text #2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </li>
                     <li>
-                        <h2>Mario Klingemann a Codemotion Roma 2014 – CREATIVITY</h2>
-                        <p>“Il mondo del digitale permette a tutti di poter aver un accesso più immediato alle informazioni, e quindi, di conseguenza, è più semplice creare, essere protagonisti attivi. Non più o non solo consumer, ma soprattutto maker”</p>
+                        <h2>Text #3</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
                     </li>
                 </ul>
                 <ul class="callout_images">
@@ -135,7 +147,7 @@
                     </li>
                 </ul>
             </aside>
-            
+
             <div class="clr"></div>
             <footer id="footer">
                 <p class="copy">&copy; Copyright Training. All Right Reserved.</p>
@@ -143,11 +155,9 @@
             </footer>
         </div><!-- container -->
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/contact.js"></script>
+        
+        
+        <script data-main="js/main" src="js/vendor/require.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
