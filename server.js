@@ -16,7 +16,7 @@ var http = require("http"),
     fs = require("fs"),
     
     //modulo websocket
-    ws = require("nodejs-websocket"),
+    //ws = require("nodejs-websocket"),
     
     //se la porta viene specificata come argomento la utilizza altrimenti imposta la porta di default 8888
     port = process.argv[2] || 8888,
