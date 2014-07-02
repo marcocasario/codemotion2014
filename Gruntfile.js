@@ -1,7 +1,5 @@
 module.exports = function(grunt) {
 
-   var mozjpeg = require('imagemin-mozjpeg');
-
    // Project configuration.
    grunt.initConfig({
       pkg: grunt.file.readJSON('package.json'),
