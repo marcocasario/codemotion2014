@@ -1,55 +1,56 @@
-(function(codemotion2014){
-  'use strict';
-  function CommonUtils(){
+(function(codemotion2014) {
+   'use strict';
 
-    /* ------ PRIVATE PROPERTY ------ */
-    var isOnline = true,
-    that = this;
+   function CommonUtils() {
+
+      /* ------ PRIVATE PROPERTY ------ */
+      var isOnline = true,
+         that = this;
 
 
-    /* ------ PRIVATE FUNCTION ------ */
-    
+      /* ------ PRIVATE FUNCTION ------ */
 
-    /* ------ PUBLIC FUNCTION ------ */
 
-    /* main and common function */
-    //controlla se l'oggetto passato non e' vuoto
-    that.isNotNull = function ( value ){
-        return ( typeof value !== 'undefined' && value !== null );
-    };
-    //show element
-    that.show = function( dom ){
-      if( that.isNotNull(dom) && typeof dom === 'object'){
-        dom.removeClass('hide');
-      }
-    };
+      /* ------ PUBLIC FUNCTION ------ */
 
-    //hide element
-    that.hide = function( dom ){
-      if( that.isNotNull(dom) && typeof dom === 'object'){
-        dom.addClass('hide');
-      }
-    };
+      /* main and common function */
+      //controlla se l'oggetto passato non e' vuoto
+      that.isNotNull = function(value) {
+         return (typeof value !== 'undefined' && value !== null);
+      };
+      //show element
+      that.show = function(dom) {
+         if (that.isNotNull(dom) && typeof dom === 'object') {
+            dom.removeClass('hide');
+         }
+      };
 
-    that.isOnlineHandler = function(){
-      isOnline = navigator.onLine;
-      codemotion2014.commonUtils.onlineStatus.dispatch(isOnline);
-    };
+      //hide element
+      that.hide = function(dom) {
+         if (that.isNotNull(dom) && typeof dom === 'object') {
+            dom.addClass('hide');
+         }
+      };
 
-    /* ------ LISTENER ------ */
-    window.addEventListener("offline", function(e) {
-      codemotion2014.commonUtils.isOnlineHandler();
-    });
-    window.addEventListener("online", function(e) {
-      codemotion2014.commonUtils.isOnlineHandler();
-    });
-    
-    that.onlineStatus = new signals();
+      that.isOnlineHandler = function() {
+         isOnline = navigator.onLine;
+         codemotion2014.commonUtils.onlineStatus.dispatch(isOnline);
+      };
 
-    return that;
-  }
+      /* ------ LISTENER ------ */
+      window.addEventListener("offline", function(e) {
+         codemotion2014.commonUtils.isOnlineHandler();
+      });
+      window.addEventListener("online", function(e) {
+         codemotion2014.commonUtils.isOnlineHandler();
+      });
 
-  codemotion2014.commonUtils = new CommonUtils();
-  codemotion2014.commonUtils.isOnlineHandler();
+      that.onlineStatus = new Signals();
 
-})( codemotion2014 );
+      return that;
+   }
+
+   codemotion2014.commonUtils = new CommonUtils();
+   codemotion2014.commonUtils.isOnlineHandler();
+
+})(codemotion2014);
