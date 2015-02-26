@@ -1,0 +1,31 @@
+{
+   "name": "codemotion2014",
+   "version": "0.0.1",
+   "homepage": "https://github.com/marcocasario/codemotion2014",
+   "authors": [
+      "Luciano Murruni <luciano.murruni@gmail.com>"
+   ],
+   "description": "training",
+   "main": "index.html",
+   "moduleType": [
+      "amd",
+      "globals"
+   ],
+   "keywords": [
+      "codemotion2014"
+   ],
+   "license": "MIT",
+   "private": true,
+   "ignore": [
+      "**/.*",
+      "node_modules",
+      "bower_components",
+      "test",
+      "tests"
+   ],
+   "dependencies": {
+      "jquery": "~2.1.1",
+      "requirejs": "~2.1.14",
+      "js-signals": "~1.0.0"
+   }
+}
